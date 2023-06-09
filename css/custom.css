@@ -1,0 +1,80 @@
+/* classes to add customize bootstrap */
+
+p {
+  font-family: 'Abel', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+#hint {
+  font-family: 'Oleo Script', cursive;
+}
+
+.text-modified {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Venetian Red */
+.filled-venetianred {
+  background-color: #A22020;
+}
+
+/* Firebrick */
+.filled-firebrick {
+  background-color: #BF2626;
+}
+
+/* Carmine Pink */
+.filled-pink {
+  background-color: #E14747;
+}
+
+.filled-darkblue {
+  background-color: rgba(24, 25, 38, 1);
+}
+
+.home-titles {
+  width: 300px;
+}
+
+.border-pink {
+  border: 1pt solid #E14747;
+}
+
+.title-pink {
+  color: #A22020;
+  text-shadow: 2px 2px 4px grey;
+}
+
+.plain-text {
+  font-size: 12pt;
+}
+
+#play-button {
+  background-color: #A22020;
+  width: 50px;
+  height: 50px;
+}
+
+#play-button:hover {
+  background-color: #E14747;
+}
+
+#trending-container {
+  background-image: url("../assets/Page 8/Model outdoor shoot.jpg");
+  background-size: cover;
+}
+
+#progress-bar {
+  background-color: #E14747;
+}

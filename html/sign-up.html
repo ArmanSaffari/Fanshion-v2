@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Fanshion project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <link href="../css/custom.css" rel="stylesheet" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+
+    <!-- 
+      link 5 fonts from google fonts including:
+      Roboto, Abel, Playfair, Robot Condenced, Oleo Script
+     -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Oleo+Script&family=Playfair+Display&family=Roboto&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+ 
+  </head>
+  <body>
+    <!-- navbar with BOOOTSTRAP -->
+    <nav class="navbar navbar-expand-sm navbar-dark filled-darkblue">
+      <div class="container-fluid d-flex justify-content-between">
+
+        <!-- menu icon on the left -->
+        <div>
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img
+              src="../assets/Logo and social media icons/menuIcon.png"
+            />
+            <span class="mx-3">MENU</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">PROFILE</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./brands.html">BRANDS</a></li>
+            <li><a class="dropdown-item" href="#">COLORS</a></li>
+            <li><a class="dropdown-item" href="#">STYLES</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./snapshots.html">SNAPSHOTS</a></li>
+            <li><a class="dropdown-item" href="./trending.html">TRENDING</a></li>
+          </ul>
+        </div>
+        
+        <!-- logo in the middle -->
+        <div>
+          <a class="navbar-brand" href="./index.html">
+            <img
+                alt="Fanshionlogoinblue"
+                src="../assets/Logo and social media icons/Fanshion logo in blue.png"
+                height="48" class="d-inline-block align-text-top"
+                />
+          </a>
+        </div>
+        
+        <!-- menu list on the right -->
+        <div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item order-lg-2">
+              <a class="nav-link text-white" href="./login.html">LOG IN</a>
+            </li>
+
+            <li class="nav-item order-lg-1">
+              <a class="nav-link text-white" href="./sign-up.html">REGISTER</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+
+    
+    <div class="container d-flex justify-content-center flex-column mb-5 py-5">
+      <h2 class="mt-5 text-center">Ready to take a free trial?</h2>
+
+      <div class="row d-flex justify-content-center my-5">
+        <div class="col-md-9 col-lg-7 col-12 bg-dark p-5 ">
+          <form>
+            <h4 class="text-white mb-5">Sign up for a free acount</h4>
+            <div class="row my-3">
+              <div class="form-group col-6">
+                <input type="text" class="form-control" placeholder="First Name" id="usr">
+              </div>
+              <div class="form-group col-6">
+                <input type="text" class="form-control" placeholder="Last Name" id="usr">
+              </div>
+            </div>
+            <div class="form-group my-3">
+              <input type="email" class="form-control" placeholder="Email Address" id="pwd">
+            </div>
+            <div class="form-group my-3">
+              <input type="password" class="form-control" placeholder="Create Password" id="pwd">
+            </div>
+            <div class="my-3 d-flex justify-content-start">
+              <button type="submit" class="btn btn-dark border-0 w-50"
+              style="background-color: #A22020; color: white;">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-center">
+        <h2 class="title-pink text-center">The largest community of fashion enthusiasts</h2>
+
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <img width="100%" src="../assets/Page 5/Gourgeous.jpg" />
+      </div>
+    </div>
+
+
+      <!-- footer with Bootstrap -->
+      <footer class="filled-darkblue text-light py-5">
+        <div class="container my-5">
+          <div class="row justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
+              <img
+                alt="facebook-logo"
+                src="../assets/Logo and social media icons/facebook-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="twitter-logo"
+                src="../assets/Logo and social media icons/twitter-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="instagram-logo"
+                src="../assets/Logo and social media icons/instagram-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="pinterest-logo"
+                src="../assets/Logo and social media icons/pinterest-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="whatsapp-logo"
+                src="../assets/Logo and social media icons/whatsapp-logo.png"
+                class="mx-2"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="filled-pink my-3" style="height: 2px"></div>
+              <h5 class="text-center font-weight-bold text-white">Privacy policy / Terms of use</h5>
+          </div>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+  </body>
+</html>

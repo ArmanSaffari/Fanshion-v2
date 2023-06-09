@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Fanshion project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <link href="../css/custom.css" rel="stylesheet" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+
+    <!-- 
+      link 5 fonts from google fonts including:
+      Roboto, Abel, Playfair, Robot Condenced, Oleo Script
+     -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Oleo+Script&family=Playfair+Display&family=Roboto&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+ 
+  </head>
+  <body>
+    <!-- navbar with BOOOTSTRAP -->
+    <nav class="navbar navbar-expand-sm navbar-dark filled-darkblue">
+      <div class="container-fluid d-flex justify-content-between">
+
+        <!-- menu icon on the left -->
+        <div>
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img
+              src="../assets/Logo and social media icons/menuIcon.png"
+            />
+            <span class="mx-3">MENU</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">PROFILE</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./brands.html">BRANDS</a></li>
+            <li><a class="dropdown-item" href="#">COLORS</a></li>
+            <li><a class="dropdown-item" href="#">STYLES</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./snapshots.html">SNAPSHOTS</a></li>
+            <li><a class="dropdown-item" href="./trending.html">TRENDING</a></li>
+          </ul>
+        </div>
+        
+        <!-- logo in the middle -->
+        <div>
+          <a class="navbar-brand" href="./index.html">
+            <img
+                alt="Fanshionlogoinblue"
+                src="../assets/Logo and social media icons/Fanshion logo in blue.png"
+                height="48" class="d-inline-block align-text-top"
+                />
+          </a>
+        </div>
+        
+        <!-- menu list on the right -->
+        <div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item order-lg-2">
+              <a class="nav-link text-white" href="./login.html">LOG IN</a>
+            </li>
+
+            <li class="nav-item order-lg-1">
+              <a class="nav-link text-white" href="./sign-up.html">REGISTER</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+
+    <div class="container sticky-top">
+      <div class="progress">
+        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <div id="trending-container" class="container-fluid my-0">
+      
+      <div class="container d-flex justify-content-center flex-column mb-5 py-5">
+        <!-- row 1 -->
+        <div class="row bg-white p-5 mb-5">
+          <div class="col-sm-12 col-md-6 d-flex align-items-center">
+            <h4>Learn about brand features</h4>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <img class="w-100" src="../assets/Page 8/Outdoor shoot.jpg"/>
+          </div>
+        </div>
+
+        <!-- row 2 -->
+        <div class="row bg-white p-5 mb-5">
+          <div class="col-sm-12 col-md-6 d-flex align-items-center">
+            <h4>What is new in the Market</h4>
+          </div>
+          <div class="col-12">
+            <!-- carousel -->
+            <div id="carouselExampleAutoplaying"
+            class="carousel slide"
+            data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="5"
+                aria-label="Slide 6"
+              ></button>
+            </div>
+            <div class="carousel-inner" >
+              <div class="carousel-item active">
+                <img class="d-block w-100 object-fit-cover" height="500px" src="../assets/Page 8/By the window.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100 object-fit-cover" height="500px"  src="../assets/Page 8/By the rock.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100 object-fit-cover" height="500px"  src="../assets/Page 8/Casual wear.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100 object-fit-cover" height="500px"  src="../assets/Page 8/Lady by railway.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100 object-fit-cover" height="500px"  src="../assets/Page 8/Man with black sweater.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100 object-fit-cover" height="500px"  src="../assets/Page 8/White fur fleece.jpg" alt="..." />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+          
+          </div>
+        </div>
+
+        <!-- row 3 -->
+        <div class="row bg-white p-5 mb-5">
+          <div class="col-sm-12 col-md-8">
+
+            <!-- carousel -->
+            <div id="carouselExampleAutoplaying2"
+            class="carousel slide"
+            data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="5"
+                aria-label="Slide 6"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="../assets/Page 8/General trends/11a.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="../assets/Page 8/General trends/11b.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100" src="../assets/Page 8/General trends/11c.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100" src="../assets/Page 8/General trends/11d.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100" src="../assets/Page 8/General trends/11e.jpg" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img class ="d-block w-100" src="../assets/Page 8/General trends/11f.jpg" alt="..." />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying2"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying2"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+
+          </div>
+          <div class="col-sm-12 col-md-4 d-flex align-items-center justify-content-center">
+            <h4>General Trends</h4>
+          </div>
+
+        </div>
+        
+        <!-- row 4 -->
+        <div class="row bg-white p-5 mb-5">
+          <div class="col-sm-12 col-md-6 d-flex align-items-center">
+            <div class="d-flex justify-content-center align-items-center">
+              <h4 class="d-inline">The largest community of fashion enthusiasts</h4>
+              <div class="d-inline me-5">
+                <button id="play-button" class="d-inline btn btn-primary shadow rounded-circle d-flex justify-content-center align-items-center border-0" onclick="playVideo()">
+                  <img src="../assets/Page 7/Polygon.png" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <iframe class="w-100" height="350px"
+            src="https://www.youtube.com/embed/p3XYCHZMEDY" 
+            title="YouTube video player" 
+            frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+          </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      <!-- footer with Bootstrap -->
+      <footer class="filled-darkblue text-light py-5 my-0">
+        <div class="container my-5">
+          <div class="row justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
+              <img
+                alt="facebook-logo"
+                src="../assets/Logo and social media icons/facebook-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="twitter-logo"
+                src="../assets/Logo and social media icons/twitter-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="instagram-logo"
+                src="../assets/Logo and social media icons/instagram-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="pinterest-logo"
+                src="../assets/Logo and social media icons/pinterest-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="whatsapp-logo"
+                src="../assets/Logo and social media icons/whatsapp-logo.png"
+                class="mx-2"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="filled-pink my-3" style="height: 2px"></div>
+              <h5 class="text-center font-weight-bold text-white">Privacy policy / Terms of use</h5>
+          </div>
+        </div>
+      </footer>
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/mainScript.js"></script>
+
+  </body>
+</html>

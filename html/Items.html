@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="english">
+  <link>
+    <title>Fanshion project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <link href="../css/custom.css" rel="stylesheet" />
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+
+    <!-- 
+      link 5 fonts from google fonts including:
+      Roboto, Abel, Playfair, Robot Condenced, Oleo Script
+     -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Oleo+Script&family=Playfair+Display&family=Roboto&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+ 
+
+  </head>
+  <body>
+    <!-- navbar with BOOTSTRAP -->
+    <nav class="navbar navbar-expand-sm navbar-dark filled-darkblue">
+      <div class="container-fluid d-flex justify-content-between">
+
+        <!-- menu icon on the left -->
+        <div>
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img
+              src="../assets/Logo and social media icons/menuIcon.png"
+            />
+            <span class="mx-3">Menu</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./brands.html">Brands</a></li>
+            <li><a class="dropdown-item" href="#">Colors</a></li>
+            <li><a class="dropdown-item" href="#">Styles</a></li>
+            <li><a class="dropdown-item" href="./snapshots.html">Snapshots</a></li>
+            <li><a class="dropdown-item" href="./trending.html">Trending</a></li>
+          </ul>
+        </div>
+        
+        <!-- logo in the middle -->
+        <div>
+          <a class="navbar-brand" href="./index.html">
+            <img
+                alt="Fanshionlogoinblue"
+                src="../assets/Logo and social media icons/Fanshion logo in blue.png"
+                height="48" class="d-inline-block align-text-top"
+                />
+          </a>
+        </div>
+        
+        <!-- menu list on the right -->
+        <div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item order-lg-2">
+              <a class="nav-link text-white" href="./login.html">Login</a>
+            </li>
+
+            <li class="nav-item order-lg-1">
+              <a class="nav-link text-white" href="./sign-up.html">Register</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+
+    <div class="container sticky-top">
+      <div class="progress">
+        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+    </div>
+
+      <!-- searchbar with Bootstrap-->
+        <div class="container-fluid col-sm-12 col-md-6 border border-dark rounded d-flex align-items-center justify-content-between my-3" style="height: 50px">
+          <form class="d-flex w-100" role="search" >
+            <div class="d-flex w-100 justify-content-between">
+              <input class="form-control me-2 border-0 text-center display-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit" style="background-color: rgba(242, 119, 119, 1)">Go</button>
+            </div>
+          </form>
+        </div>
+      <br>
+      <br>
+      <br>
+
+<div class="container d-flex flex-column mb-5">
+  <h1>ZARA</h1>
+  <br>
+  <div class="row">
+
+    <!-- card 1 -->
+    
+    <div class="col-12 col-lg-6 my-3  h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+            <a href="./itemDetails.html" style="text-decoration: none;">
+              <img class="w-100 h-100 rounded-3" src="../assets/Page 3/1 Drawstring jacket.png" alt="Drawstring">
+            </a>
+          </div>
+          <div class="card-body col-7">
+            <h5 class="card-title text-center my-2">Drawstring Jacket</h5>
+            
+            <div class="row justify-content-between">
+              <div class="d-inline col-auto">
+                <span class="badge filled-pink ">Zara</span>
+                <span class="badge filled-pink">Classic</span>
+              </div>
+              <div class="d-inline col-auto">
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+              </div>
+            </div>
+
+            <div class="my-3 rounded-3 p-3">
+              <h4>Reviews</h4>
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Ella<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+              <p> This jacket exceeded my expectations with its comfortable fit, durable materials, and stylish design</p>
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Becky<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+              <p> It's great, love it!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- card 2 -->
+    <div class="col-12 col-lg-6 my-3 h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+          <img class="w-100 h-100 rounded-3" src="../assets/Page 3/2 Amazon green dress.png" class="card-img-top" width="327px" alt="Amazon">
+          </div>
+        <div class="card-body col-7">
+            <h5 class="card-title text-center my-2">Amazon Green Dress</h5>
+            <div class="row justify-content-between">
+              <div class="d-inline col-auto">
+                <span class="badge filled-pink ">Zara</span>
+                <span class="badge filled-pink">Classic</span>
+              </div>
+              <div class="d-inline col-auto">
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+            </div>
+            </div>
+                <div class="my-3 rounded-3 p-3">
+                <h4>Reviews</h4>
+                  
+                  <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Molly<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+                  <p> Beautiful dress, so comfy and easy to put on</p>
+                  <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Jackie<span class="text-black-50 mx-3" style="font-size: 12px"> 1 week ago</span></p>
+                  <p> It's a little big on me but with some adjustments I can make it work, buy smaller than your actual size!</p>
+                </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- card 3 -->
+    <div class="col-12 col-lg-6 my-3 h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border-dark border rounded-3 col-5 p-0 h-100">
+          <img class="w-100 h-100 rounded-3" src="../assets/Page 3/3 Light pink dress.png" class="card-img class="w-100 h-100"-top" width="327px" alt="Drawstring">
+          </div>
+        <div class="card-body col-7">
+            <h5 class="card-title text-center my-2">Light Pink Dress</h5>
+            <div class="row justify-content-between">
+              <div class="d-inline col-auto">
+                <span class="badge filled-pink ">Zara</span>
+                <span class="badge filled-pink">Classic</span>
+              </div>
+              <div class="d-inline col-auto">
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+              </div>
+            </div>
+                <div class="my-3 rounded-3 p-3">
+                <h4>Reviews</h4>
+                  
+                  <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Georgina<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+                  <br>
+                  <p> Obssessed with this dress omg</p>
+                  <br>
+                  <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Hailey<span class="text-black-50 mx-3" style="font-size: 12px"> 1 week ago</span></p>
+                  <br>
+                  <p> Super cute, can't wait to wear it out</p>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- card 4 -->
+    <div class="col-12 col-lg-6 my-3  h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+            <img class="w-100 h-100 rounded-3" src="../assets/Page 3/4. Black and white dress.png" class="card-img-top" width="327px" alt="Drawstring">
+          </div>
+        <div class="card-body col-7">
+            <h5 class="card-title text-center my-2">Black & White Dress</h5>
+            <div class="row justify-content-between">
+              <div class="d-inline col-auto">
+                <span class="badge filled-pink ">Zara</span>
+                <span class="badge filled-pink">Classic</span>
+              </div>
+              <div class="d-inline col-auto">
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+              </div>
+            </div>
+                <div class="my-3 rounded-3 p-3">
+                <h4>Reviews</h4>
+                  
+                <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Riley<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+                <br>
+                <p> Beautiful!! Highly recommended, goes with anything</p>
+                <br>
+                <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Mariella<span class="text-black-50 mx-3" style="font-size: 12px"> 4 days ago</span></p>
+                <br>
+                <p> Fits just right, great for an evening dinner</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- card 5 -->
+    <div class="col-12 col-lg-6 my-3  h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+            <img class="w-100 h-100 rounded-3" src="../assets/Page 3/5 Burnt wood onesie.png" class="card-img class="w-100 h-100"-top" width="327px" alt="Drawstring">
+          </div>
+        <div class="card-body col-7">
+            <h5 class="card-title text-center my-2">Burnt Wood Onesie</h5>
+            <div class="row justify-content-between">
+              <div class="d-inline col-auto">
+                <span class="badge filled-pink ">Zara</span>
+                <span class="badge filled-pink">Classic</span>
+              </div>
+              <div class="d-inline col-auto">
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+                <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            </div>
+              </div>
+                <div class="my-3 rounded-3 p-3">
+                <h4>Reviews</h4>
+                
+                <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Allison<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+                <br>
+                <p> Very elegant and comfortable</p>
+                <br>
+                <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Janice<span class="text-black-50 mx-3" style="font-size: 12px"> 5 days ago</span></p>
+                <br>
+                <p> Love the color and fits like a glove, absolutely gorgeous!</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- card 6 -->
+    <div class="col-12 col-lg-6 my-3  h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+            <img class="w-100 h-100 rounded-3" src="../assets/Page 3/6 Pink jeans.png" class="card-img-top" width="327px" alt="Drawstring">
+        </div>
+      <div class="card-body col-7">
+          <h5 class="card-title text-center my-2">Pink Jeans</h5>
+          <div class="row justify-content-between">
+            <div class="d-inline col-auto">
+              <span class="badge filled-pink ">Zara</span>
+              <span class="badge filled-pink">Classic</span>
+            </div>
+            <div class="d-inline col-auto">
+              <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+              <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+              <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+              <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+              <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+           </div>
+          </div>
+            <div class="my-3 rounded-3 p-3">
+            <h4>Reviews</h4>
+                
+            <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Talia<span class="text-black-50 mx-3" style="font-size: 12px"> 1 day ago</span></p>
+            <br>
+            <p> A bit flashy but very good fit.</p>
+            <br>
+            <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Lianne<span class="text-black-50 mx-3" style="font-size: 12px"> 3 days ago</span></p>
+            <br>
+            <p> Sooo pretty! It does get dirty quick so avoid wearing to a club</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- card 7 -->
+  <div class="col-12 col-lg-6 my-3  h-100">
+    <div class="card border border-dark rounded-3">
+      <div class="row m-0" style="height: 400px;">
+        <div class="border border-dark rounded-3 col-5 p-0 h-100">
+          <img class="w-100 h-100 rounded-3" src="../assets/Page 3/7 Baby blue dress.png" class="card-img-top" width="327px" alt="Drawstring">
+      </div>
+    <div class="card-body col-7">
+        <h5 class="card-title text-center my-2">Baby Blue Silk Dress</h5>
+        <div class="row justify-content-between">
+          <div class="d-inline col-auto">
+            <span class="badge filled-pink ">Zara</span>
+            <span class="badge filled-pink">Classic</span>
+          </div>
+          <div class="d-inline col-auto">
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+         </div>
+        </div>
+          <div class="my-3 rounded-3 p-3">
+          <h4>Reviews</h4>
+            
+          <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Sabrina<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+          <br>
+          <p> You girls have no idea how comfortable this is, buy it now</p>
+          <br>
+          <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Olivia<span class="text-black-50 mx-3" style="font-size: 12px"> 6 days ago</span></p>
+          <br>
+          <p> Sooo amazing, buying all the colors</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+    <!-- card 8 -->
+    <div class="col-12 col-lg-6 my-3  h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+            <img class="w-100 h-100 rounded-3" src="../assets/Page 3/8 Metallic black summer dress.png" class="card-img-top" width="327px" alt="Drawstring">
+          </div>
+        <div class="card-body col-7">
+        <h5 class="card-title text-center my-2">Metallic Black Summer Dress</h5>
+        <div class="row justify-content-between">
+          <div class="d-inline col-auto">
+            <span class="badge filled-pink ">Zara</span>
+            <span class="badge filled-pink">Classic</span>
+          </div>
+          <div class="d-inline col-auto">
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+         </div>
+        </div>
+            <div class="my-3 rounded-3 p-3">
+            <h4>Reviews</h4>
+              
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Felicity<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+              <br>
+              <p> Perfect for summer, elegant and breezy</p>
+              <br>
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Amy<span class="text-black-50 mx-3" style="font-size: 12px"> 1 week ago</span></p>
+              <br>
+              <p> Not a good fit for me, the wind kept blowing it up like Marylin Monroe</p>
+            </div>
+    </div>
+    </div>
+      </div>
+    </div>
+
+  
+    <!-- card 9 -->
+    <div class="col-12 col-lg-6 my-3  h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+            <img class="w-100 h-100 rounded-3" src="../assets/Page 3/9 Black blazer.png" class="card-img-top" width="327px" alt="Drawstring">
+          </div>
+      <div class="card-body col-7">
+        <h5 class="card-title text-center my-2">Black Blazer</h5>
+        <div class="row justify-content-between">
+          <div class="d-inline col-auto">
+            <span class="badge filled-pink ">Zara</span>
+            <span class="badge filled-pink">Classic</span>
+          </div>
+          <div class="d-inline col-auto">
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+         </div>
+        </div>
+            <div class="my-3 rounded-3 p-3">
+            <h4>Reviews</h4>
+              
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Tammy<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+              <br>
+              <p> This is the best thing I've bought in my life!</p>
+              <br>
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Rubie<span class="text-black-50 mx-3" style="font-size: 12px"> 4 days ago</span></p>
+              <br>
+              <p> Literally can't stop wearing it.</p>
+            </div>
+    </div>
+    </div>
+      </div>
+    </div>
+  
+    <!-- card 10 -->
+    <div class="col-12 col-lg-6 my-3  h-100">
+      <div class="card border border-dark rounded-3">
+        <div class="row m-0" style="height: 400px;">
+          <div class="border border-dark rounded-3 col-5 p-0 h-100">
+            <img class="w-100 h-100 rounded-3" src="../assets/Page 3/10 Cream blazer.png" class="card-img-top" width="327px" alt="Drawstring">
+          </div>
+      <div class="card-body col-7">
+        <h5 class="card-title text-center my-2">Cream Blazer</h5>
+        <div class="row justify-content-between">
+          <div class="d-inline col-auto">
+            <span class="badge filled-pink ">Zara</span>
+            <span class="badge filled-pink">Classic</span>
+          </div>
+          <div class="d-inline col-auto">
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-filled.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+            <img width="20px" height="20px" src="../assets/Page 6/star-blank.svg" />
+         </div>
+        </div>
+            <div class="my-3 rounded-3 p-3">
+            <h4>Reviews</h4>
+              
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Miluska<span class="text-black-50 mx-3" style="font-size: 12px"> 2 days ago</span></p>
+              <br>
+              <p> Looks so nice if you combine it properly</p>
+              <br>
+              <p class="d-inline"><span><img src="../assets/Page 6/personIcon.svg" /></span> Patrcia<span class="text-black-50 mx-3" style="font-size: 12px"> 6 days ago</span></p>
+              <br>
+              <p> Terrible quality, don't buy it</p>
+            </div>
+    </div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+    
+
+    
+    
+    
+   
+  
+    
+  
+  
+
+
+
+</div>
+
+  <!-- footer with Bootstrap -->
+      <footer class="filled-darkblue text-light py-5">
+        <div class="container my-5">
+          <div class="row justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
+              <img
+                alt="facebook-logo"
+                src="../assets/Logo and social media icons/facebook-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="twitter-logo"
+                src="../assets/Logo and social media icons/twitter-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="instagram-logo"
+                src="../assets/Logo and social media icons/instagram-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="pinterest-logo"
+                src="../assets/Logo and social media icons/pinterest-logo.png"
+                class="mx-2"
+              />
+              <img
+                alt="whatsapp-logo"
+                src="../assets/Logo and social media icons/whatsapp-logo.png"
+                class="mx-2"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="filled-pink my-3" style="height: 2px"></div>
+              <h5 class="text-center font-weight-bold text-white">Privacy policy / Terms of use</h5>
+          </div>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/mainScript.js"></script>
+
+  </body>
+</html>
