@@ -1,15 +1,34 @@
+window.addEventListener("DOMContentLoaded", async function () {
+
 //1. get the parameter:
 
 const queryString = window.location.search;
-// console.log(queryString);
 
 const urlParams = new URLSearchParams(queryString);
 
 const brand = urlParams.get('brand')
 console.log(brand);
-// Zara
 
 //2. send request to firebase to get the content
+
+// db = firebase.firestore();
+
+// async function getItmes (brand) {
+//   let products = [];
+//   try {
+//     const querySnapshot = await db.collection("Products").where("brand", "==", "Zara").get();
+//     querySnapshot.forEach((doc) => {
+//       const product = doc.data();
+//       products.push(product);
+//     });
+//     return products
+//   } catch (err) {
+//     console.error('err: ', err)
+//   }
+// };
+
+// products = await getItmes (brand);
+// console.log(products)
 
 product = {
   "id": "123541",
@@ -52,3 +71,5 @@ product = {
   **first we build one card and then we will add more (I will tell u that stage later)
   good luck!
 */ 
+
+});

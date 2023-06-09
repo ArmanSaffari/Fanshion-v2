@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 1 Exercise</title>
+  </head>
+  <body>
+    <h1>Firebase</h1>
+    <form id="form">
+      <div>
+        First Name:
+        <input type="text" id="firstName" />
+      </div>
+      <div>
+        Last Name:
+        <input type="text" id="lastName" />
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+
+    <ul id="users"></ul>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBVmxbqkMA_pA7zbf1hquSjnPGPRScg1_o",
+        authDomain: "fanshion-815a6.firebaseapp.com",
+        projectId: "fanshion-815a6",
+        storageBucket: "fanshion-815a6.appspot.com",
+        messagingSenderId: "475747810014",
+        appId: "1:475747810014:web:26bf7366e8ebf28c1c204f",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./addData.js"></script>
+  </body>
+</html>
