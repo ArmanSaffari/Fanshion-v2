@@ -13,22 +13,22 @@ console.log(brand);
 
 // db = firebase.firestore();
 
-// async function getItmes (brand) {
-//   let products = [];
-//   try {
-//     const querySnapshot = await db.collection("Products").where("brand", "==", "Zara").get();
-//     querySnapshot.forEach((doc) => {
-//       const product = doc.data();
-//       products.push(product);
-//     });
-//     return products
-//   } catch (err) {
-//     console.error('err: ', err)
-//   }
-// };
+async function getItmes (brand) {
+  let products = [];
+  try {
+    const querySnapshot = await db.collection("Products").where("brand", "==", "Zara").get();
+    querySnapshot.forEach((doc) => {
+      const product = doc.data();
+      products.push(product);
+    });
+    return products
+  } catch (err) {
+    console.error('err: ', err)
+  }
+};
 
-// products = await getItmes (brand);
-// console.log(products)
+products = await getItmes (brand);
+console.log(products)
 
 product = {
   "id": "123541",
