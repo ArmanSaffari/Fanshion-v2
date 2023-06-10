@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     console.log(news);
 
     await news.forEach((item, index) => {
-      addSlideToCarousel(item.title, item.url, newsImages[index])
+      addSlideToCarousel(item.title, item.url, newsImages[index]);
     });
 
   };
@@ -97,7 +97,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     carouselIndicator.setAttribute("data-bs-slide-to", carouselInner.childElementCount - 1);
 
     // Add active class to the first indicator
-    if (carouselInner.childElementCount === 1) {
+    if (carouselInner.childElementCount === 2) {
       carouselIndicator.classList.add("active");
     }
 

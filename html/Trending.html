@@ -101,52 +101,53 @@
           <div class="col-sm-12 col-md-6 d-flex align-items-center">
             <h4>Fashion News</h4>
           </div>
-          <div class="col-12">
+          <div class="col-12" id="FashionNewsContainer">
             <!-- carousel -->
             <div id="newsCarousel"
             class="carousel slide"
             data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
+              <div class="carousel-indicators">
+                <button
+                  id = "placeHolderBtn"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
 
-            </div>
-            <div class="carousel-inner" >
-              <div class="carousel-item active">
-                <img class="d-block w-100 object-fit-cover" height="500px" src="https://source.unsplash.com/alkChvKEpYk" alt="..." />
-                <div class="bg-white bg-opacity-50 rounded-3 carousel-caption">
-                  <h5 class="mb-4 text-dark">First Slide</h5>
-                  <button href="#" type="button" class="btn btn-outline-dark">Read More</button>
-
-                </div>
               </div>
+              <div class="carousel-inner" >
+                <div id="placeHolderItem" class="carousel-item active">
+                  <img class="d-block w-100 object-fit-cover" height="500px" src="https://source.unsplash.com/alkChvKEpYk" alt="..." />
+                  <div class="bg-white bg-opacity-50 rounded-3 carousel-caption">
+                    <h5 class="mb-4 text-dark">First Slide</h5>
+                    <button href="#" type="button" class="btn btn-outline-dark">Read More</button>
 
+                  </div>
+                </div>
+
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#newsCarousel"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#newsCarousel"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#newsCarousel"
-              data-bs-slide="prev"
-            >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#newsCarousel"
-              data-bs-slide="next"
-            >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
           </div>
         </div>
 
