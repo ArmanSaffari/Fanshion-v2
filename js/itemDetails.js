@@ -64,6 +64,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     let images = '';
     product.images.forEach((image, index) => {
       images += ` <img 
+      class="px-2"
       src=${image}
       alt=${product.title+ '' +index}
       width="300"
@@ -130,11 +131,11 @@ window.addEventListener("DOMContentLoaded", async function () {
         // console.log(product.id)
         if (similar.id != product.id) {
             similarList += `<a href="./itemDetails.html?id=${similar.id}" style="text-decoration: none;">
-            <div>
+            <div class="mx-4">
               <img 
                 src=${similar.images[0]}
                 alt=${similar.title}
-                width="300"
+                width="250"
                 height="300"
               />
               <p class="text-center title-pink">

@@ -7,7 +7,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 const brand = urlParams.get('brand')
-// console.log(brand);
+console.log(brand);
 
 //2. send request to firebase to get the content
 
@@ -30,51 +30,11 @@ async function getItmes (brand) {
 
 products = await getItmes (brand);
 localStorage.setItem('products', products)
-// console.log("products: ", products)
-
-// product = {
-//   "id": "123541",
-//   "title": "Product Title 1",
-//   "brand": "Zara",
-//   "category": "Product Category",
-//   "color": ["bright"],
-//   "badges": ["Sale", "New Arrival"],
-//   "timestamp": "2023-06-06 10:30AM",
-//   "content": "Product description or content goes here.",
-//   "images": [
-//     "https://example.com/product-image1.jpg",
-//     "https://example.com/product-image2.jpg",
-//     "https://example.com/product-image3.jpg"
-//   ],
-//   "stars": 4,
-//   "reviews": [
-//     {
-//       "author": "John Doe",
-//       "timestamp": "",
-//       "rating": 4,
-//       "comment": "Great product!"
-//     },
-//     {
-//       "author": "Jane Smith",
-//       "timestamp": "",
-//       "rating": 5,
-//       "comment": "Highly recommended!"
-//     }
-//   ]
-// }
-
+console.log("products: ", products)
 
 //3. display content using DOM
-/* arman:
-  asume that the object named "product" which I defined in section 2 above (line14)
-  is the only product data that is received from the firebase,
-  please use this javascript file to build html elements for 1 card 
-  containing this data instead of having them writen directly in html
-  **first we build one card and then we will add more (I will tell u that stage later)
-  good luck!
-*/ 
 
-  $('#brandName').Text = brand;
+  $('#brandName').text(brand);
   const cardContainer = $('#cardContainer');
 
   if (products && products.length > 0) {
@@ -138,7 +98,7 @@ localStorage.setItem('products', products)
               <div class="d-inline col-auto">${stars}</div>
             </div>
 
-            <div class="my-3 rounded-3 p-3">
+            <div class="my-3 rounded-3 p-3 overflow-auto">
               <h4>Reviews</h4>
               ${reviews}
             </div>
