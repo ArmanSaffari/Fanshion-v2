@@ -7,20 +7,20 @@ window.addEventListener("DOMContentLoaded", async function () {
   const urlParams = new URLSearchParams(queryString);
   
   const id = urlParams.get('id')
-  console.log(id);
+  // console.log(id);
 
   const product = await getProduct(id);
 
   changeContent(product);
 
   const similarProducts = await getSimilarProducts(product.category);
-  console.log(similarProducts)
+  // console.log(similarProducts)
   addSimilarProductsSection(similarProducts);
 
   async function getProduct (id) {
     let products = [];
     try {
-      // console.log("brand: ", brand.toLowerCase())
+      // // console.log("brand: ", brand.toLowerCase())
       const querySnapshot = await db.collection("Products").where("id", "==", id).get();
       querySnapshot.forEach((doc) => {
         const product = doc.data();
@@ -28,14 +28,14 @@ window.addEventListener("DOMContentLoaded", async function () {
       });
       return products[0]
     } catch (err) {
-      console.error('err: ', err)
+      // console.error('err: ', err)
     }
   };
 
   async function getSimilarProducts (category) {
     let products = [];
     try {
-      console.log("category: ", category)
+      // console.log("category: ", category)
       const querySnapshot = await db.collection("Products").where("category", "==", category).limit(5).get();
       querySnapshot.forEach((doc) => {
         const product = doc.data();
@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       });
       return products
     } catch (err) {
-      console.error('err: ', err)
+      // console.error('err: ', err)
     }
   };
 
@@ -127,7 +127,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     similarList = ''
     if (similarProducts && similarProducts.length > 0) {
       similarProducts.forEach((similar) => {
-        console.log(product.id)
+        // console.log(product.id)
         if (similar.id != product.id) {
             similarList += `<a href="./itemDetails.html?id=${similar.id}" style="text-decoration: none;">
             <div>

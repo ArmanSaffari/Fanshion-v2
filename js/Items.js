@@ -7,7 +7,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 const brand = urlParams.get('brand')
-console.log(brand);
+// console.log(brand);
 
 //2. send request to firebase to get the content
 
@@ -16,7 +16,7 @@ console.log(brand);
 async function getItmes (brand) {
   let products = [];
   try {
-    // console.log("brand: ", brand.toLowerCase())
+    // // console.log("brand: ", brand.toLowerCase())
     const querySnapshot = await db.collection("Products").where("brand", "==", brand.toLowerCase()).get();
     querySnapshot.forEach((doc) => {
       const product = doc.data();
@@ -24,13 +24,13 @@ async function getItmes (brand) {
     });
     return products
   } catch (err) {
-    console.error('err: ', err)
+    // console.error('err: ', err)
   }
 };
 
 products = await getItmes (brand);
 localStorage.setItem('products', products)
-console.log("products: ", products)
+// console.log("products: ", products)
 
 // product = {
 //   "id": "123541",
@@ -122,7 +122,7 @@ console.log("products: ", products)
         });
       }
 
-      console.log(product.images[0])
+      // console.log(product.images[0])
       cardItem.html(`
       <a href="./itemDetails.html?id=${product.id}" style="text-decoration: none;">
       <div class="card border border-dark rounded-3">
