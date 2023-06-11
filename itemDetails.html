@@ -86,54 +86,54 @@
   </div>
 
     <div class="container d-flex justify-content-center flex-column mb-5 py-5">
-      <h2>ZARA</h2>
+      <h2 id="brandTitle">ZARA</h2>
 
       <div class="col-12">
         <div class="d-flex justify-content-between align-content-end">
-          <h4 class="d-inline">Drawstring Jacket</h4>
-          <div class="d-inline">
-            <img width="30px" height="30px" src="./assets/Page 6/star-filled.svg" />
-            <img width="30px" height="30px" src="./assets/Page 6/star-filled.svg" />
-            <img width="30px" height="30px" src="./assets/Page 6/star-filled.svg" />
-            <img width="30px" height="30px" src="./assets/Page 6/star-filled.svg" />
-            <img width="30px" height="30px" src="./assets/Page 6/star-blank.svg" />
+          <h4 class="d-inline" id="productTitle">Drawstring Jacket</h4>
+          <div class="d-inline" id="productStars">
+            <img width="30px" height="30px" src="./assets/Page6/star-filled.svg" />
+            <img width="30px" height="30px" src="./assets/Page6/star-filled.svg" />
+            <img width="30px" height="30px" src="./assets/Page6/star-filled.svg" />
+            <img width="30px" height="30px" src="./assets/Page6/star-filled.svg" />
+            <img width="30px" height="30px" src="./assets/Page6/star-blank.svg" />
           </div>
         </div>
       </div>
 
       <div class="col-12 mt-4">
-        <div class="d-flex py-3 overflow-x-auto">
-          <img 
-            src="./assets/Page 6/Drawstring jacket 5.png"
+        <div class="d-flex py-3 overflow-x-auto" id="imagesContainer">
+          <!-- <img 
+            src="./assets/Page6/Drawstring jacket 5.png"
             alt="Drawstring jacket"
             width="300"
             height="300"
           />
           <img 
-            src="./assets/Page 6/Drawstring jacket 1.png"
+            src="./assets/Page6/Drawstring jacket 1.png"
             alt="Drawstring jacket"
             width="300"
             height="300"
           />
           <img 
-            src="./assets/Page 6/Drawstring jacket 2.png"
+            src="./assets/Page6/Drawstring jacket 2.png"
             alt="Drawstring jacket"
             width="300"
             height="300"
           />
 
           <img 
-            src="./assets/Page 6/Drawstring jacket 3.png"
+            src="./assets/Page6/Drawstring jacket 3.png"
             alt="Drawstring jacket"
             width="300"
             height="300"
           />
           <img 
-            src="./assets/Page 6/Drawstring jacket 4.png"
+            src="./assets/Page6/Drawstring jacket 4.png"
             alt="Drawstring jacket"
             width="300"
             height="300"
-          /> 
+          />  -->
         </div>
       </div>
 
@@ -141,13 +141,7 @@
         <div class="col-md-12 col-lg-4 mt-4">
           <div class="border-pink h-100 rounded-3 p-4">
             <h5>Description</h5>
-            <p>
-              Fanshion has been leading the charge in sustainable
-              fashion since 2011, and they will be sharing their
-              knowledge on how to live a more mindful life with a
-              sustainable wardrobe.
-            </p>
-            <p>
+            <p id="productDescription">
               Fanshion's philosophy is that through conscious
               consumption of clothes, you can affect positive change not
               just in your own life but in the environment as well. Now,
@@ -155,8 +149,10 @@
               helping you learn how to create an ethical and sustainable
               wardrobe without spending all your time or money on it.
             </p>
-            <span class="badge filled-pink text-white">Classic</span>
-            <span class="badge filled-pink text-white">ZARA</span>
+            <div id="productBadges">
+              <span class="badge filled-pink text-white">Classic</span>
+              <span class="badge filled-pink text-white">ZARA</span>
+            </div>
           </div>
         </div>
 
@@ -164,74 +160,74 @@
           <div class="border-pink h-100 rounded-3 p-4">
 
             <h5>Reviews</h5>
-
-            <div class="row m-3">
-              <div class="col-2">
-                <p>
-                  <span>
-                    <img src="./assets/Page 6/personIcon.svg"/>
-                  </span>
-                  <strong>Molly</strong>
-                </p>
+            <div id="productReviews">
+              <div class="row m-3">
+                <div class="col-2">
+                  <p>
+                    <span>
+                      <img src="./assets/Page6/personIcon.svg"/>
+                    </span>
+                    <strong>Molly</strong>
+                  </p>
+                </div>
+                <div class=" col-10">
+                  <p class="text-secondary m-0">2 days ago</p>
+                  <p>This jacket exceeded my expectations with its
+                    comfortable fit, durable material, and stylish design.</p>
+                </div>
               </div>
-              <div class=" col-10">
-                <p class="text-secondary m-0">2 days ago</p>
-                <p>This jacket exceeded my expectations with its
-                  comfortable fit, durable material, and stylish design.</p>
+
+              <div class="row m-3">
+                <div class="col-2">
+                  <p>
+                    <span>
+                      <img src="./assets/Page6/personIcon.svg"/>
+                    </span>
+                    <strong>Alexia</strong>
+                  </p>
+                </div>
+                <div class="col-10">
+                  <p class="text-secondary m-0">2 days ago</p>
+                  <p>This jacket failed to meet my expectations - not only
+                    did it provide little warmth in cold weather, but it
+                    also began to fall apart after only a few uses,
+                    leaving me feeling disappointed and frustrated with my
+                    purchase.</p>
+                </div>
+              </div>
+
+              <div class="row m-3">
+                <div class="col-2">
+                  <p>
+                    <span>
+                      <img src="./assets/Page6/personIcon.svg"/>
+                    </span>
+                    <strong>Jessy</strong>
+                  </p>
+                </div>
+                <div class=" col-10">
+                  <p class="text-secondary m-0">5 days ago</p>
+                  <p>I absolutely love this jacket - it's warm,
+                    lightweight, and looks great with any outfit.</p>
+                </div>
+              </div>
+
+              <div class="row m-3">
+                <div class="col-2">
+                  <p>
+                    <span>
+                      <img src="./assets/Page6/personIcon.svg"/>
+                    </span>
+                    <strong>Ezra</strong>
+                  </p>
+                </div>
+                <div class=" col-10">
+                  <p class="text-secondary m-0">1 week ago</p>
+                  <p>This jacket exceeded my expectations with its
+                    comfortable fit, durable material, and stylish design.</p>
+                </div>
               </div>
             </div>
-
-            <div class="row m-3">
-              <div class="col-2">
-                <p>
-                  <span>
-                    <img src="./assets/Page 6/personIcon.svg"/>
-                  </span>
-                  <strong>Alexia</strong>
-                </p>
-              </div>
-              <div class="col-10">
-                <p class="text-secondary m-0">2 days ago</p>
-                <p>This jacket failed to meet my expectations - not only
-                  did it provide little warmth in cold weather, but it
-                  also began to fall apart after only a few uses,
-                  leaving me feeling disappointed and frustrated with my
-                  purchase.</p>
-              </div>
-            </div>
-
-            <div class="row m-3">
-              <div class="col-2">
-                <p>
-                  <span>
-                    <img src="./assets/Page 6/personIcon.svg"/>
-                  </span>
-                  <strong>Jessy</strong>
-                </p>
-              </div>
-              <div class=" col-10">
-                <p class="text-secondary m-0">5 days ago</p>
-                <p>I absolutely love this jacket - it's warm,
-                  lightweight, and looks great with any outfit.</p>
-              </div>
-            </div>
-
-            <div class="row m-3">
-              <div class="col-2">
-                <p>
-                  <span>
-                    <img src="./assets/Page 6/personIcon.svg"/>
-                  </span>
-                  <strong>Ezra</strong>
-                </p>
-              </div>
-              <div class=" col-10">
-                <p class="text-secondary m-0">1 week ago</p>
-                <p>This jacket exceeded my expectations with its
-                  comfortable fit, durable material, and stylish design.</p>
-              </div>
-            </div>
-
           </div>
         </div>
         
@@ -241,10 +237,10 @@
         <h5>Similar Items</h5>
 
         <div class="col-12 mt-4">
-          <div class="d-flex py-3 overflow-x-auto">
+          <div class="d-flex py-3 overflow-x-auto" id="similarProductsContainer">
             <div>
               <img 
-                src="./assets/Page 6/2. Cropped denim jacket.png"
+                src="./assets/Page6/2. Cropped denim jacket.png"
                 alt="Cropped denim jacket"
                 width="300"
                 height="300"
@@ -256,7 +252,7 @@
             
             <div>
               <img 
-                src="./assets/Page 6/3. Faux leather bomber.png"
+                src="./assets/Page6/3. Faux leather bomber.png"
                 alt="faux leather bomber"
                 width="300"
                 height="300"
@@ -269,7 +265,7 @@
 
             <div>
               <img 
-                src="./assets/Page 6/4. Maxi pocket bomber.png"
+                src="./assets/Page6/4. Maxi pocket bomber.png"
                 alt="maxi pocket bomber"
                 width="300"
                 height="300"
@@ -281,7 +277,7 @@
 
             <div>
               <img 
-                src="./assets/Page 6/1. Jean Jacket.png"
+                src="./assets/Page6/1. Jean Jacket.png"
                 alt="gold button textured jacket"
                 width="300"
                 height="300"
@@ -334,10 +330,14 @@
         </div>
       </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/mainScript.js"></script>
-
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+      <script src="./js/dbConfig.js"></script>
+      <script src="./js/mainScript.js"></script>
+      <script src="./js/itemDetails.js"></script>
   </body>
 </html>

@@ -34,8 +34,13 @@ window.addEventListener("DOMContentLoaded", async function () {
   }]
 
   async function addProduct(product) {
+    
     const id = db.collection('Products').doc().id;
     product.brand = product.brand.toLowerCase();
+    if (product.category) {
+      product.category = product.category.toLowerCase();
+    }
+
     const docRef = await db.collection("Products").doc(id).set({
       id: id,
       ...product,
