@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'a3e84bd330msheda336f89d90189p100b74jsn157ced0ce4ed',
+        'X-RapidAPI-Key': '67f2e8a736mshd6ec5d0bfcc47f1p1df50bjsn0dc6bb81d805',
         'X-RapidAPI-Host': 'fashion-industry-news-data-collection.p.rapidapi.com'
       }
     };

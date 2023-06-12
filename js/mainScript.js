@@ -25,8 +25,9 @@ $(window).on('resize', updateProgressBar);
 $(window).on('load', updateProgressBar);
 
 
+console.log(localStorage.getItem("userName"))
+if(localStorage.getItem("userName")) {
 
-if(localStorage.getItem("token")) {
   const navbarRight = this.document.getElementById('navbarRight');
   navbarRight.innerHTML = `
     <li class="nav-item order-lg-2">
