@@ -43,7 +43,10 @@ window.addEventListener("DOMContentLoaded", async function () {
   //       "rating": 4,
   //       "comment": "Sturdy construction. Performs well."
   //     },
-  //   ]
+  // {
+
+  // }
+  // //   ]
   // }]
 
   async function addProduct(product) {

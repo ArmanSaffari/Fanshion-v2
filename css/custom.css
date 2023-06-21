@@ -51,6 +51,10 @@ input {
   border: 1pt solid #E14747;
 }
 
+.border-end-pink {
+  border-right: 1pt solid #E14747;
+}
+
 .title-pink {
   color: #A22020;
   text-shadow: 2px 2px 4px grey;
@@ -77,4 +81,20 @@ input {
 
 #progress-bar {
   background-color: #E14747;
+}
+
+.bg-pale-blue {
+  background-color: #DBEBFF;
+}
+
+.font-inter {
+  font-family: 'Inter';
+}
+
+.bg-dark-pink {
+  background-color: #A22020;
+}
+
+.text-white {
+  color: white;
 }

@@ -16,7 +16,6 @@ console.log(brand);
 async function getItmes (brand) {
   let products = [];
   try {
-    // // console.log("brand: ", brand.toLowerCase())
     const querySnapshot = await db.collection("Products").where("brand", "==", brand.toLowerCase()).get();
     querySnapshot.forEach((doc) => {
       const product = doc.data();
@@ -24,13 +23,14 @@ async function getItmes (brand) {
     });
     return products
   } catch (err) {
-    // console.error('err: ', err)
+    console.error('err: ', err)
   }
 };
 
 products = await getItmes (brand);
-localStorage.setItem('products', products)
-console.log("products: ", products)
+
+// localStorage.setItem('products', products)
+// console.log("products: ", products)
 
 //3. display content using DOM
 
