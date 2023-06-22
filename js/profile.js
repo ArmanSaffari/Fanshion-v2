@@ -244,7 +244,7 @@ window.addEventListener("DOMContentLoaded", async function () {
   function addSavedItemCard(product) {
     console.log(product)
     let cardItem =$('<div></div>')
-    cardItem.addClass('col-12 col-lg-6 my-3 h-100');
+    cardItem.addClass('col-12 col-lg-6 my-3');
 
     //create badges:
     let badgesList ='';
@@ -263,9 +263,10 @@ window.addEventListener("DOMContentLoaded", async function () {
     }
 
     cardItem.html(`
-      <div class="card h-50 ratio ratio-1x1 border border-dark m-0 p-0">
+      <div class="card border border-dark col-12" style="height: 350px">
         <a href="./itemDetails.html?id=${product.id}" class="h-100 text-decoration-none text-dark ">
-          <img class="card-img h-100 object-fit-cover" src=${product.images[0]} alt="Card image cap">
+          <img class="card-img h-100 object-fit-contain"
+            src=${product.images[0]} alt="product Image">
           <div class="card-img-overlay position-relative p-0 ">
             <div class=" position-absolute bottom-100 w-100 m-0 p-4 rounded-bottom-2 bg-overlay-pink">
               <h5 class="w-100 card-title text-pink">${product.title}</h5>

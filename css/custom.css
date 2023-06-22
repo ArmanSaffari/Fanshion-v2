@@ -109,3 +109,7 @@ input {
 .bg-overlay-pink {
   background-color: rgba(154, 154, 154, 0.5);
 }
+
+.ratio-tall {
+  aspect-ratio: 0.66;
+}
