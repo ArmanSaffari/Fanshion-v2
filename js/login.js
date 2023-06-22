@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", async function () {
 
   const loginForm = document.getElementById("loginForm");
+
   loginForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
@@ -17,29 +18,55 @@ window.addEventListener("DOMContentLoaded", async function () {
       }
   });
 
-  async function signInUser (email, password) {
-    try {
-      const cred = await auth.signInWithEmailAndPassword(email, password)
-      const user = cred.user;
-      const token = await user.getIdToken();
-
-      // console.log(user.uid)
-      const userDetails = await db.collection('Users').where("uid", "==", user.uid.toString()).get()
-      // console.log(userDetails.data())
-      let userName = ''
-      userDetails.forEach((doc) => {
-        const userData = doc.data();
-        userName = userData.firstName + ' ' + userData.lastName;
-      });
-
-      showAlert(`Hello ${userName}! You have signed in successfully.`, 'success')
-      setParam(token, userName);
-
-    } catch (err) {
-      const errorMessage = err.message;
-      showAlert(errorMessage, 'danger')
-      console.error('err: ', errorMessage)
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      this.setTimeout(() => window.location.href = "./index.html" , 2000)
     }
+  });
+
+  async function signInUser (email, password) {
+    //   const cred = await auth.signInWithEmailAndPassword(email, password)
+    //   const user = cred.user;
+    //   const token = await user.getIdToken();
+
+    //   // console.log(user.uid)
+    //   const userDetails = await db.collection('Users').where("uid", "==", user.uid.toString()).get()
+    //   // console.log(userDetails.data())
+    //   let userName = ''
+    //   userDetails.forEach((doc) => {
+    //     const userData = doc.data();
+    //     userName = userData.firstName + ' ' + userData.lastName;
+    //   });
+
+    //   showAlert(`Hello ${userName}! You have signed in successfully.`, 'success')
+    //   setParam(token, userName);
+
+    // } catch (err) {
+    //   const errorMessage = err.message;
+    //   showAlert(errorMessage, 'danger')
+    //   console.error('err: ', errorMessage)
+    // }
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(async () => {
+        const user = await firebase.auth().currentUser;
+        const userName = await getUserName(user.uid)
+
+        if (user) {
+          showAlert(`Hello ${userName}! You have signed in successfully.`, 'success');
+          // console.log(user)
+          const token = await user.getIdToken();
+          console.log("token:", JSON.stringify(token))
+          sessionStorage.setItem('token', token);
+        }
+        
+      })
+      .then(() => {
+        
+      })
+      .catch((err) => showAlert(err.message, 'danger'));
   };
 
   async function signOut (email, password) {
@@ -66,12 +93,13 @@ window.addEventListener("DOMContentLoaded", async function () {
     alertContainer.innerHTML = '';
   }
 
-  function setParam(token, userName) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('userName', userName);
-
-    setTimeout(() => {
-      window.location.href = './index.html';
-    }, 3000);
+  async function getUserName(userUid) {
+    const userDetails = await db.collection('Users').where("uid", "==", userUid.toString()).get()
+      let userName = ''
+      userDetails.forEach((doc) => {
+        const userData = doc.data();
+        userName = userData.firstName + ' ' + userData.lastName;
+      });
+      return userName
   }
 });

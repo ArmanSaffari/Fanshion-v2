@@ -25,13 +25,32 @@ $(window).on('resize', updateProgressBar);
 $(window).on('load', updateProgressBar);
 
 
-console.log(localStorage.getItem("userName"))
-if(localStorage.getItem("userName")) {
+firebase.auth().onAuthStateChanged(async function (user) {
+  if (user) {
+    let userUid = user.uid;
+    db.collection('Users').doc(userUid).get().then((doc) => {
+      const userData = doc.data();
+      userName = userData.firstName + ' ' + userData.lastName;
+      return userName
+    }).then((userName) => {
+      switchNavbar(userName)
+    })
+  } else {
+    console.log("User is not logged in!")
+  }
+});
 
+async function getUserName(userUid) {
+  let userName = ''
+  
+  return "userName"
+}
+
+function switchNavbar(userName) {
   const navbarRight = this.document.getElementById('navbarRight');
   navbarRight.innerHTML = `
     <li class="nav-item order-lg-2">
-      <a class="nav-link text-white" href="#"><span class="badge bg-danger ">${localStorage.getItem("userName")}</span></a>
+      <a class="nav-link text-white" href="./profile.html"><span class="badge bg-danger ">${userName}</span></a>
     </li>
     <li class="nav-item order-lg-2">
       <a class="nav-link text-white" href="./index.html" id="signOutBtn">LOG OUT</a>
@@ -42,10 +61,10 @@ if(localStorage.getItem("userName")) {
   signOutBtn.addEventListener('click', signOut)
 }
 
+
+
 function signOut() {
-  console.log("here!")
-  localStorage.clear("token");
-  localStorage.clear("userName");
+  firebase.auth().signOut();
 }
 
 });

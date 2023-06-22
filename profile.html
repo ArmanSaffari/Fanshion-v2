@@ -28,6 +28,7 @@
     />
   </head>
   <body>
+    <!-- navbar -->
     <div class="sticky-top">
       <nav class="navbar navbar-expand-sm navbar-dark filled-darkblue">
         <div class="container-fluid d-flex justify-content-between">
@@ -102,51 +103,60 @@
     </div>
 
     <!-- main container -->
-    <div
-      class="container-fluid font-inter p-0 border border-dark d-flex align-items-center justify-content-between"
-    >
-      <div class="container-fluid row">
+      <div class="container-fluid row p-0 m-0 border">
+        
+        <!-- left section -->
         <div
           class="position-relative col-md-4 col-sm-12 bg-pale-blue p-5 border-end-pink"
         >
           <div
             id="profileImageContainer"
-            class="container-fluid p-0 ratio mb-4 ratio-1x1 rounded border-pink"
+            class="position-relative mb-4 ratio ratio-1x1 rounded-3 border-pink"
           >
             <img
               id="profileImage"
-              src="./assets/Page8/By the rock.jpg"
-              width="100%"
-              class="rounded object-fit-cover"
+              src="./assets/icons/profileAvatar.png"
+              class="rounded-3 object-fit-cover w-100"
             />
+            <div class="bg-transparent d-flex justify-content-end align-items-end">
+              <div class="input-group w-auto">
+                <img id="clearProfileImageInput" src='./assets/icons/deleteBtn.svg' class="d-none bg-white rounded-3"/>
+                <input type="file" class="form-control d-none" id="profileImageUploadBtn">
+                <label for="profileImageUploadBtn" id="profileImageUploadLabel" class="input-group-text d-none rounded-3 p-0 bg-transparent border-0  ">
+                  <div id="selectedPhoto" class="border-0 fs-6 fw-bold mx-2 text-dark bg-white rounded-3"></div>
+                  <img class="bg-white rounded-3" src="./assets//icons/Camera.svg"/>
+                </label>
+              </div>
+            </div>
           </div>
 
-          <div id="userDetails" class="row fs-5 text-uppercase">
+          <div id="userDetails" class="row fs-5 text-uppercase my-5">
             <div class="d-flex align-items-center flex-wrap my-2">
               <img src="./assets/icons/birthday-cake1.svg" height="20px" />
-              <span class="ms-1">July 25, 1996</span>
+              <span id="DOB" class="ms-1"></span>
             </div>
             <div class="d-flex align-items-center flex-wrap my-2">
               <span class="text-decoration-underline fw-light">FROM:</span>
-              <span class="ms-1 fw-normal">Sydney, Australia</span>
+              <span id="from" class="ms-1 fw-normal"></span>
             </div>
             <div class="d-flex align-items-center flex-wrap my-2">
               <span class="text-decoration-underline fw-light">Lives in:</span>
-              <span class="ms-1 fw-normal">Toronto, Canada</span>
+              <span id="livesIn" class="ms-1 fw-normal"></span>
             </div>
             <div class="d-flex align-items-center flex-wrap my-2">
               <span class="text-decoration-underline fw-light"
                 >occupation:</span
               >
-              <span class="ms-1 fw-normal">Fashion designer</span>
+              <span id="occupation"  class="ms-1 fw-normal"></span>
             </div>
-            <div class="d-flex align-items-center flex-wrap my-2">
+            <div id="favoriteBrandContainer" class="d-flex align-items-center flex-wrap my-2">
               <div class="col-12 text-decoration-underline fw-light">
                 Favorite brand:
               </div>
-              <a href="#">
-                <img
-                  src="./assets/brands/ZARA.png"
+              <a href="#" class="my-3">
+                <img id="favoriteBrand"
+                  src=""
+                  alt=""
                   class="border border-dark rounded object-fit-cover"
                   width="150px"
                   height="100px"
@@ -155,60 +165,138 @@
             </div>
           </div>
 
+          <div id="editProfileFields" class="d-none row fs-5 text-uppercase my-5">
+            <form id="editProfileEdit">
+
+              <div class="mb-1 w-100">
+                <label for="firstNameInput" class="form-label fs-6 m-0">First Name *</label>
+                <input type="text" class="font-inter form-control-sm bg-transparent border border-dark w-100" id="firstNameInput">
+              </div>
+
+              <div class="mb-1 w-100">
+                <label for="lastName" class="form-label fs-6 m-0">First Name *</label>
+                <input type="text" class="font-inter form-control form-control-sm bg-transparent border border-dark w-100" id="lastNameInput">
+              </div>
+
+              <div class="mb-1 w-100">
+                <label for="DOBInput" class="form-label fs-6 m-0">Date of Birth</label>
+                <input type="date" id="DOBInput" class="font-inter form-control form-control-sm bg-transparent border border-dark w-100" >
+              </div>
+
+              <!-- <div class="mb-1 w-100">
+                <label for="email" class="form-label fs-6 m-0">Email *</label>
+                <input type="email" id="email" class="font-inter form-control form-control-sm bg-transparent border border-dark w-100" >
+              </div>
+
+              <div class="mb-1 w-100">
+                <label for="password" class="form-label fs-6 m-0">Email *</label>
+                <input type="password" id="password" class="font-inter form-control form-control-sm bg-transparent border border-dark w-100" >
+              </div> -->
+
+              <div class="mb-1 w-100">
+                <label for="fromInput" class="form-label fs-6 m-0">From</label>
+                <input type="text" id="fromInput" class="font-inter form-control form-control-sm bg-transparent border border-dark w-100" >
+              </div>
+
+              <div class="mb-1 w-100">
+                <label for="livesInInput" class="form-label fs-6 m-0">Lives In</label>
+                <input type="text" id="livesInInput" class="font-inter form-control form-control-sm bg-transparent border border-dark w-100" >
+              </div>
+
+              <div class="mb-1 w-100">
+                <label for="occupationInput" class="form-label fs-6 m-0">Occupation</label>
+                <input type="text" id="occupationInput" class="font-inter form-control form-control-sm bg-transparent border border-dark w-100" >
+              </div>
+
+              <div class="mb-1 w-100">
+                <label for="favoriteBrandInput" class="form-label fs-6 m-0">Favorite Brand</label>
+                <select id="favoriteBrandInput" class="form-select form-select-sm bg-transparent border border-dark w-100" aria-label=".form-select-sm">
+                  <option class="bg-pale-blue" selected></option>
+                  <option class="bg-pale-blue" value="zara">zara</option>
+                  <option class="bg-pale-blue" value="h&m">h&m</option>
+                  <option class="bg-pale-blue" value="calvin klein">calvin klein</option>
+                  <option class="bg-pale-blue" value="gucci">gucci</option>
+                  <option class="bg-pale-blue" value="abercrombie & fitch">abercrombie & fitch</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <br />
+          <br />
           <div
             id="profileButtons"
-            class="row mt-5 fs-5 text-uppercase position-absolute bottom-0"
+            class="row fs-6 text-uppercase position-absolute bottom-0"
           >
-            <div class="d-flex align-items-center my-2">
+            <div id="editProfileBtnContainer" class="d-flex align-items-center my-2">
               <img src="./assets/icons/Edit.svg" height="20px" />
-              <button id="editProfileBtn" class="bg-transparent border-0 text-uppercase text-dark">Edit Profile</button>
+              <button id="editProfileBtn" class="bg-transparent profile-btn border-0 text-uppercase">Edit Profile</button>
             </div>
-            <div class="d-flex align-items-center my-2">
+            <div id="saveProfileBtnContainer" class="d-none d-flex align-items-center my-2">
+              <img src="./assets/icons/check.svg" height="20px" />
+              <button id="saveChangesBtn" class="bg-transparent profile-btn border-0 text-uppercase">Save Changes</button>
+              <img src="./assets/icons/close.svg" height="20px" />
+              <button id="cancelBtn" class="bg-transparent profile-btn border-0 text-uppercase">Cancel</button>
+            </div>
+            <div id="settingBtnContainer" class="d-flex align-items-center my-2">
               <img src="./assets/icons/Settings.svg" height="20px" />
-              <button id="settingsBtn" class="bg-transparent border-0 text-uppercase text-dark">Settings</button>
+              <button id="settingsBtn" class="bg-transparent profile-btn border-0 text-uppercase">Settings</button>
             </div>
           </div>
         </div>
 
-        <!-- right content -->
-        <div class="col-md-8 col-sm-12 p-5 text-uppercase">
-          <div class="row d-flex">
-            <div class="fs-1 fw-bolder">
-              Emma Herbert
-              <button class="d-inline btn btn-dark btn-sm border-0 ms-4">
-                Subscribe
-              </button>
-            </div>
+        <!-- right section -->
+        <div id="rightSection" class="col-md-8 col-sm-12 p-5 text-uppercase">
+          <div class="row d-flex align-items-center">
+            <div id="name" class="fs-1 d-inline fw-bolder w-auto"></div> 
+            <button class="mt-2 d-inline btn btn-dark btn-sm border-0 ms-4" style="width: 100px">
+              Subscribe
+            </button>
           </div>
 
-          <div class="row d-flex my-5">
+          <!-- <div class="row d-flex my-5">
             <div class="col-12 fw-normal fs-4">Recent posts</div>
             <div
               class="col-12 border-pink rounded p-5 overflow-x-auto"
               style="height: 400px"
             ></div>
-          </div>
+          </div> -->
 
-          <div class="row d-flex my-5">
+          <!-- <div class="row d-flex my-5">
             <div class="col-12 fw-normal fs-4">Reviews</div>
             <div
-              class="col-12 border-pink rounded p-5 overflow-x-auto"
-              style="height: 400px"
-            ></div>
+              class="w-auto border-pink rounded p-5 overflow-x-auto"
+              style="height: 500px"
+            >
+          
+            <div class="card h-100 border border-black w-auto">
+              <a href="#" class="h-100 text-decoration-none text-dark ">
+                <img class="card-img h-100 object-fit-cover" src="./assets/products/1/DrawstringJacket1.png" alt="Card image cap">
+                <div class="card-img-overlay position-relative p-0 ">
+                  <div class=" position-absolute bottom-100 w-100 m-0 rounded-bottom-2 bg-overlay-pink">
+                    <h5 class="w-100 card-title text-pink">Arman Saffari</h5>
+                    <div class="w-100">Stars</div>
+                    <div class="w-100">Badge List</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          
+          
           </div>
+          </div> -->
 
-          <div class="row d-flex my-5">
-            <div class="col-12 fw-normal fs-4">Saved Items</div>
+            <div class="w-100 fw-normal fs-4">Saved Items</div>
             <div
-              class="col-12 border-pink rounded p-5 overflow-x-auto"
-              style="height: 400px"
+              id="savedItemsContainer"
+              class="row overflow-x-auto overflow-y-hidden d-flex flex-row p-0 flex-nowrap border-pink rounded p-5 overflow-x-auto w-100 ratio" style="--bs-aspect-ratio: 50%;"
+              style="height: 800px"
             ></div>
           </div>
 
-          <div class="mask" style="background-color: rgba(0, 0, 0, 0.5)"></div>
+          
         </div>
+
       </div>
-    </div>
 
      <!-- footer with Bootstrap -->
      <footer class="filled-darkblue text-light py-5">
@@ -264,6 +352,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
     <script src="./js/mainScript.js"></script>
     <script src="./js/dbConfig.js"></script>
     <script src="./js/profile.js"></script>

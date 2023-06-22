@@ -98,3 +98,14 @@ input {
 .text-white {
   color: white;
 }
+
+.profile-btn:hover {
+  color:#A22020
+}
+#editProfileBtn:hover {
+  color:#A22020
+}
+
+.bg-overlay-pink {
+  background-color: rgba(154, 154, 154, 0.5);
+}

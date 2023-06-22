@@ -28,16 +28,15 @@ window.addEventListener("DOMContentLoaded", async function () {
       const cred = await auth.createUserWithEmailAndPassword(userData.email, userData.password)
       const uid = cred.user.uid;
 
-      const docRef = await db.collection("Users").add({
-        uid: uid,
+      db.collection("Users").doc(uid).set({
         firstName: userData.firstName,
-        lastName: userData.lastName,
-      });
-      const token = await cred.user.getIdToken();
+        lastName: userData.lastName
+      })
+      .then(() => {
+        // setParam(token, `${userData.firstName} ${userData.lastName}`);
 
-      setParam(token, `${userData.firstName} ${userData.lastName}`);
-
-      showAlert( `Hello ${userData.firstName} ${userData.lastName}! Thank you for registeration!` , 'success')
+        showAlert( `Hello ${userData.firstName} ${userData.lastName}! Thank you for registeration!` , 'success')
+      })
     
     } catch (err) {
       const errorMessage = err.message;
@@ -46,32 +45,31 @@ window.addEventListener("DOMContentLoaded", async function () {
     }
   };
 
-  async function signInUser (email, password) {
-    try {
-      const cred = await auth.signInWithEmailAndPassword(email, password)
-      const user = cred.user;
-      const token = await user.getIdToken();
+  // async function signInUser (email, password) {
+  //   try {
+  //     const cred = await auth.signInWithEmailAndPassword(email, password)
+  //     const user = cred.user;
+  //     const token = await user.getIdToken();
 
-      console.log(user.uid)
-      db.collection('Users').where("uid", )
+  //     console.log(user.uid)
+  //     db.collection('Users').where("uid", )
 
-      setParam(token, `${userData.firstName} ${userData.lastName}`);
-      // console.log("token: ", token)
+  //     setParam(token, `${userData.firstName} ${userData.lastName}`);
 
-    } catch (err) {
-      showAlert(errorMessage, 'danger')
-      console.error('err: ', errorMessage)
-    }
-  };
+  //   } catch (err) {
+  //     showAlert(errorMessage, 'danger')
+  //     console.error('err: ', errorMessage)
+  //   }
+  // };
 
-  async function signOut (email, password) {
-    try {
-      const cred = await auth.signOut()
-      console.log("user successfully signed out!")
-    } catch (err) {
-      console.error('err: ', err)
-    }
-  };
+  // async function signOut (email, password) {
+  //   try {
+  //     const cred = await auth.signOut()
+  //     console.log("user successfully signed out!")
+  //   } catch (err) {
+  //     console.error('err: ', err)
+  //   }
+  // };
   
   function showAlert(alertText, color) {
     const alertContainer = document.getElementById('alertContainer')
