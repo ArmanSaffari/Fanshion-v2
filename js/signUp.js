@@ -1,97 +1,65 @@
-window.addEventListener("DOMContentLoaded", async function () {
+$(document).ready(async function () {
 
-  const signUpForm = document.getElementById("signUpForm");
-  signUpForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
+  $('#signUpForm').submit(async function (e) {
+    e.preventDefault();
 
     hideAlert()
-    const formEl = event.target.elements
+    const formEl = e.target.elements
 
     if (formEl.firstName.value && formEl.lastName.value &&
       formEl.email.value && formEl.password.value ) {
 
-        const response = await createUser({
-          firstName: formEl.firstName.value,
-          lastName: formEl.lastName.value,
-          email: formEl.email.value,
-          password: formEl.password.value
-        });
+      createUser({
+        firstName: formEl.firstName.value,
+        lastName: formEl.lastName.value,
+        email: formEl.email.value,
+        password: formEl.password.value
+      });
 
-      } else {
-        showAlert("please enter all values first for register!", 'danger')
-      }
+    } else {
+      showAlert("please enter all values first for register!", 'danger')
+    }
   });
 
-
   async function createUser (userData) {
-    try {
-      const cred = await auth.createUserWithEmailAndPassword(userData.email, userData.password)
-      const uid = cred.user.uid;
+    firebase.auth()
+    .createUserWithEmailAndPassword(userData.email, userData.password)
+    .then(() => {
+      console.log("User successfully created");
+      const user = firebase.auth().currentUser;
+      addUsertoDb(user.uid, userData)
+    })
+    .catch((err) => console.log("Error creating user", err));
+  }
 
-      db.collection("Users").doc(uid).set({
-        firstName: userData.firstName,
-        lastName: userData.lastName
-      })
-      .then(() => {
-        // setParam(token, `${userData.firstName} ${userData.lastName}`);
+  async function addUsertoDb (uid, userData) {
+    db.collection("Users").doc(uid).set({
+      firstName: userData.firstName,
+      lastName: userData.lastName
+    })
+    .then(() => {
+      showAlert( `Hello ${userData.firstName} ${userData.lastName}! Thank you for registeration!` , 'success')
+      setTimeout(() => {
+        window.location.href = './index.html';
+      }, 3000);
+    })
+    .catch((err) => console.log("Error creating user", err));
+  }
 
-        showAlert( `Hello ${userData.firstName} ${userData.lastName}! Thank you for registeration!` , 'success')
-      })
-    
-    } catch (err) {
-      const errorMessage = err.message;
-      showAlert(errorMessage, 'danger')
-      console.error('err: ', errorMessage)
-    }
-  };
-
-  // async function signInUser (email, password) {
-  //   try {
-  //     const cred = await auth.signInWithEmailAndPassword(email, password)
-  //     const user = cred.user;
-  //     const token = await user.getIdToken();
-
-  //     console.log(user.uid)
-  //     db.collection('Users').where("uid", )
-
-  //     setParam(token, `${userData.firstName} ${userData.lastName}`);
-
-  //   } catch (err) {
-  //     showAlert(errorMessage, 'danger')
-  //     console.error('err: ', errorMessage)
-  //   }
-  // };
-
-  // async function signOut (email, password) {
-  //   try {
-  //     const cred = await auth.signOut()
-  //     console.log("user successfully signed out!")
-  //   } catch (err) {
-  //     console.error('err: ', err)
-  //   }
-  // };
-  
   function showAlert(alertText, color) {
-    const alertContainer = document.getElementById('alertContainer')
-    alertContainer.innerHTML = `
+    $("#alertContainer").html(`
     <div class="col-md-9 col-lg-7 col-12">
       <div class="alert alert-${color}" role="alert">
         ${alertText}
       </div>
-    </div>`;
+    </div>`)
   }
 
   function hideAlert() {
-    const alertContainer = document.getElementById('alertContainer')
-    alertContainer.innerHTML = '';
+    $('#alertContainer').html('');
   }
 
-  function setParam(token, userName) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('userName', userName);
-
-    setTimeout(() => {
-      window.location.href = './index.html';
-    }, 3000);
-  }
+  $("#resetBtn").click(() => {
+    hideAlert() 
+  })
 });
