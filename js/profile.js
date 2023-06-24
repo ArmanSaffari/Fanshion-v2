@@ -136,7 +136,7 @@ window.addEventListener("DOMContentLoaded", async function () {
 
       await updateUserDetails(userUid, values);
       await uploadProfileImage(userUid, extension, file)
-      // getUserDetails(userUid);
+
       hideEditForm();
     }
   });
@@ -275,6 +275,8 @@ window.addEventListener("DOMContentLoaded", async function () {
             reject(err);
           })
         })
+      } else {
+        getUserDetails(userUid);
       }
     });
   }
