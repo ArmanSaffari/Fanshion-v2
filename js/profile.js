@@ -25,14 +25,12 @@ window.addEventListener("DOMContentLoaded", async function () {
     .get()
     .then((doc) => doc.data())
     .then((userDetails) => {
-      console.log(userDetails)
+      console.log("userDetails:", userDetails)
       userData = userDetails;
       displayUserDetails(userDetails);
-      console.log("here!")
-
+    })
+    .then(() => {
       getUserSavedItems();
-      console.log("here!")
-
     })
     .catch((err) => console.log("err", err));
   }
@@ -60,7 +58,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     
     //display user photo:
     if (userDetails.profileImageUrl) {
-      console.log(userDetails.profileImageUrl)
+      console.log("profileImageUrl:", userDetails.profileImageUrl)
       $('#profileImage').attr('src', userDetails.profileImageUrl)
     }
     
@@ -86,20 +84,25 @@ window.addEventListener("DOMContentLoaded", async function () {
 
   async function updateUserDetails(userUid, values) {
     //values must be in form of an object
-    db.collection('Users')
-    .doc(userUid)
-    .update(values)
-    .then(() => {
-      console.log("Profile Data has been successfully editted")
-    })
-    .catch((err) => {
-      console.log("err", err);
-      alert(err.message);
-      clearProfileImageInput();
-      hideEditForm();
+    return new Promise((resolve, reject) => {
+      db.collection('Users')
+      .doc(userUid)
+      .update(values)
+      .then(() => {
+        console.log("Profile Data has been successfully editted");
+        resolve();
+      })
+      .catch((err) => {
+        console.log("err", err);
+        alert(err.message);
+        clearProfileImageInput();
+        hideEditForm();
+        reject();
+      });
     });
   }
 
+  // enable edit form when clicking the edit profile button:
   $('#editProfileBtn').click(() => {
     $('#userDetails').addClass('d-none');
     $('#editProfileFields').removeClass('d-none');
@@ -107,14 +110,13 @@ window.addEventListener("DOMContentLoaded", async function () {
     $('#editProfileBtnContainer').addClass('d-none');
     $('#saveProfileBtnContainer').removeClass('d-none');
     $('#rightSection').addClass('opacity-25 pe-none');
-    $('#profileImageUploadLabel').removeClass('d-none');
+    $('#profileBtnsContainer').removeClass('d-none');
   });
 
-
+  // update changes to firebase storage and firestore when clicking save changes button:
   $('#saveChangesBtn').click( async () => {
 
     if ( $('#firstNameInput').val() && $('#lastNameInput').val()) {
-      
 
       const values = {
         firstName: $('#firstNameInput').val(),
@@ -139,6 +141,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     }
   });
 
+  // hide the edit form and reset changes when clicking the cancel button:
   $('#cancelBtn').click(hideEditForm);
 
   function hideEditForm() {
@@ -148,101 +151,154 @@ window.addEventListener("DOMContentLoaded", async function () {
     $('#editProfileBtnContainer').removeClass('d-none');
     $('#saveProfileBtnContainer').addClass('d-none');
     $('#rightSection').removeClass('opacity-25 pe-none');
-    $('#profileImageUploadLabel').addClass('d-none');
-    $('#clearProfileImageInput').addClass('d-none');
+    $('#profileBtnsContainer').addClass('d-none');
+    $('#selectedPhoto').addClass('d-none');
   }
 
-  //upload profile image
-
+  //update file whenever changing the profile image input:
   $('#profileImageUploadBtn').change((e) => {
     const files = $('#profileImageUploadBtn').prop('files')
     console.log(files)
     if (files.length > 0) {
       file = files[0];
       let imageURL = URL.createObjectURL(file);
-      console.log(imageURL)
+      console.log("imageURL:", imageURL)
 
       extension = file.name.split('.').pop();
-      $('#selectedPhoto').text("An Image Selected");
+      $('#selectedPhoto').removeClass('d-none');
       $('#clearProfileImageInput').removeClass('d-none');
       $('#profileImage').attr('src', imageURL)
     }
-
     console.log("file:", file)
     console.log("extension:", extension)
-    
   })
 
-  $('#clearProfileImageInput').click(clearProfileImageInput);
-    
-  function clearProfileImageInput() {
+  //clear the selected profile image
+  $('#clearProfileImageInput').click(() =>{
     file = "";
     extension = "";
     $('#profileImageUploadBtn').val('').trigger('change');
     $('#clearProfileImageInput').addClass('d-none');
-    $('#selectedPhoto').text('');
-  }
+    $('#selectedPhoto').addClass('d-none');
+    $('#profileImage').attr('src',(userData.profileImageUrl) || "./assets/icons/profileAvatar.png")
+  });
 
-  async function uploadProfileImage (userUid, extension, file) {
-    // check weather there is a profile image or not
-    if (extension && file) {
+  // delete previous profile image when clicking the delete button:
+  $('#deleteProfileImage').click(async () => {
+    if (userData.profileImageUrl) {
+      await deleteProfileImage();
+      alert('previous profile image has deleted successfully.');
+      window.location.href = './profile.html';
+      // getUserDetails(userUid);
+    }
+  });
 
-      if (userData.profileImageUrl) {
-        const fileRef = firebase.storage().refFromURL(userData.profileImageUrl);
-        console.log('fileRef:', fileRef)
-        await fileRef.delete().then(function() {
-          console.log('previous profile image has deleted successfully.');
-        }).catch(function(err) {
-          console.error('Error deleting previous profile image :', err);
-        });
-      }
-      const storageRef = storage.ref(`${FbStorageBucket}/${userUid}.${extension}`)
-      const uploadTask = storageRef.put(file);
-
-      await uploadTask.on('state-changed', async (snapshot) => {
-        const downloadURL = await snapshot.ref.getDownloadURL()
-        console.log("downloadURL: ", downloadURL);
-
-        db.collection('Users')
+  async function deleteProfileImage () {
+    return new Promise((resolve, reject) => {
+      const fileRef = firebase.storage().refFromURL(userData.profileImageUrl);
+      console.log('fileRef:', fileRef)
+      fileRef.delete().then(function() {
+      db.collection('Users')
         .doc(userUid)
         .update({
-          profileImageUrl: downloadURL,
+          profileImageUrl: ''
         })
         .then(() => {
-          console.log('image url has added to user database');
-          getUserDetails(userUid);
-        })
-        .catch((err) => {
-          console.error(err)
-        })
-      })
-    } else {
-      getUserDetails(userUid);
-    }
-    
+          console.log('delete Completed!')
 
+          resolve();
+        })
+      }).catch(function(err) {
+        console.error('Error deleting previous profile image :', err);
+        reject(err);
+      });
+    });
+  }
+
+  // function to upload the selected image to firebase storage:
+  async function uploadProfileImage (userUid, extension, file) {
+    return new Promise(async (resolve, reject) => {
+      console.log('uploading started!')
+      if (extension && file) {
+        // if there were any previous profile image, it will delete it,
+        // since the extension my be different and cause multiple files being saved for one user!
+        if (userData.profileImageUrl) {
+          console.log('url:', userData.profileImageUrl)
+          await deleteProfileImage();
+        }
+
+        console.log('step1')
+
+        const storageRef = storage.ref(`${FbStorageBucket}/${userUid}.${extension}`);
+        console.log('step2')
+        const uploadTask = storageRef.put(file);
+
+        console.log('step3')
+
+        // const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+        uploadTask.on('state_changed', (snapshot) => {
+          const progressValue = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log(progressValue, '%');
+
+          $('#uploadProgressContainer').removeClass('d-none')
+          $('#uploadProgressBar').css('width', `${progressValue}%`)
+          $('#uploadProgressBar').text(`${progressValue}%`)
+
+        },
+        (err) => {
+          console.error(err)
+        },
+        async () => {
+          console.log("upload is done!");
+          $('#uploadProgressContainer').addClass('d-none')
+          $('#uploadProgressBar').css('width', `0%`)
+          $('#uploadProgressBar').text(`0%`)
+
+          const downloadURL = await uploadTask.snapshot.ref.getDownloadURL()
+          console.log("downloadURL: ", downloadURL);
+
+          // add image Url to firestore for the current user
+          console.log('step5')
+          db.collection('Users')
+          .doc(userUid)
+          .update({
+            profileImageUrl: downloadURL,
+          })
+          .then(() => {
+            console.log('image url has added to user database');
+            // window.location.href = './profile.html';
+            getUserDetails(userUid);
+            resolve();
+          })
+          .catch((err) => {
+            console.error("err:", err)
+            reject(err);
+          })
+        })
+      }
+    });
   }
 
   async function getUserSavedItems () {
     // clear savedItems Cards
     $('#savedItemsContainer').html('')
-    console.log(userData.savedItems )
-    if (userData.savedItems && userData.savedItems.length > 0)
-    db.collection('Products')
-    .where('id', 'in', userData.savedItems)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const product = doc.data();
-        console.log(product)
-
-        addSavedItemCard(product);
+    console.log("savedItems:", userData.savedItems)
+    if (userData.savedItems && userData.savedItems.length > 0) {
+      db.collection('Products')
+      .where('id', 'in', userData.savedItems)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const product = doc.data();
+          addSavedItemCard(product);
+        })
       })
-    })
+    } else {
+      $('#savedItemsContainer').html('There is not any saved item!')
+    }
   }
 
   function addSavedItemCard(product) {
-    console.log(product)
     let cardItem =$('<div></div>')
     cardItem.addClass('col-12 col-lg-6 my-3');
 
@@ -278,8 +334,6 @@ window.addEventListener("DOMContentLoaded", async function () {
           </div>
         </a>`
     );
-
-    console.log(cardItem.html())
 
     $('#savedItemsContainer').append(cardItem);
 

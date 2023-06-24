@@ -26,10 +26,14 @@ $(document).ready(async function () {
     .createUserWithEmailAndPassword(userData.email, userData.password)
     .then(() => {
       console.log("User successfully created");
+      showAlert("User successfully created", 'success')
       const user = firebase.auth().currentUser;
       addUsertoDb(user.uid, userData)
     })
-    .catch((err) => console.log("Error creating user", err));
+    .catch((err) => {
+      console.log("Error creating user", err)
+      showAlert(err.message, 'danger')  
+    });
   }
 
   async function addUsertoDb (uid, userData) {

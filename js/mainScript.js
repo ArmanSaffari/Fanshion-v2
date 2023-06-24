@@ -61,8 +61,6 @@ function switchNavbar(userName) {
   signOutBtn.addEventListener('click', signOut)
 }
 
-
-
 function signOut() {
   firebase.auth().signOut();
 }

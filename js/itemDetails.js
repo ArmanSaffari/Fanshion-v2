@@ -1,4 +1,29 @@
-window.addEventListener("DOMContentLoaded", async function () {
+$(document).ready(async function () {
+
+  let userUid = null;
+
+  firebase.auth().onAuthStateChanged(async function (user) {
+    if (user) {
+      userUid = user.uid;
+    } 
+    // find out whether the product is saved by the user
+
+    // change the icon 
+  });
+
+  async function getUserDetails(userUid) {
+    console.log('beginning of getUser')
+    db.collection('Users')
+    .doc(userUid)
+    .get()
+    .then((doc) => doc.data())
+    .then((userDetails) => {
+      console.log(userDetails)
+      userData = userDetails;
+
+    })
+    .catch((err) => console.log("err", err));
+  }
 
   //1. get the parameter:
   
@@ -43,7 +68,7 @@ window.addEventListener("DOMContentLoaded", async function () {
       });
       return products
     } catch (err) {
-      // console.error('err: ', err)
+      console.error('err: ', err)
     }
   };
 
@@ -119,8 +144,6 @@ window.addEventListener("DOMContentLoaded", async function () {
     }
     $('#productReviews').html(reviews);
 
-
-
   }
 
   function addSimilarProductsSection (similarProducts) {
@@ -150,4 +173,13 @@ window.addEventListener("DOMContentLoaded", async function () {
     $('#similarProductsContainer').html(similarList);
   }
 
+  function saveItem(id) {
+    db.collection('Users')
+    .doc(userUid)
+    .get()
+    .then((doc) => {
+      const data= doc.data()
+      console.log(data)
+    })
+  }
 });
